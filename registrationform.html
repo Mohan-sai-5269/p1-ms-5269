@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,5 +35,46 @@
             return true;
         }
     </script>
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container">
+        <form id="registrationForm" onsubmit="return validateform()">
+            <label for="name">name</label>
+            <input type="text" id="name" placeholder="enter name" required><br><br>
+            <label for="phone">phone</label>
+            <input type="tel" id="phone" placeholder="phonenumber" required><br><br>
+            <label for="event"> select evvent</label>
+            <select name="games event" id="event">
+                <option value="">---selct--</option>
+                <option value="football"> football</option>
+                <option value="basketsball">basketsball</option>
+            </select><br><br>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        function validateform(){
+            const phones = document.getElementById('phone').value;
+            if(!/^\d{10}$/.test(phones)){
+                alert('enter valid number');
+                return false;
+            }
+            alert('registration is succesfull' );
+            return true;
+        }
+    </script>
+
+    
 </body>
 </html>
